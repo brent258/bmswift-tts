@@ -25,6 +25,7 @@ struct JSON {
             print("Failed to load: \(error.localizedDescription)")
             exit(1)
         }
+        print("JSON parsed successfully...")
         return json
     }
     
@@ -43,6 +44,7 @@ struct JSON {
             print("Failed to load: \(error.localizedDescription)")
             exit(1)
         }
+        print("JSON parsed successfully...")
         return json
     }
     

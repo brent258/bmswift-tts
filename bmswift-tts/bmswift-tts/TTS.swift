@@ -12,6 +12,7 @@ import AppKit
 struct TTS {
     
     public static func fromArray(_ json: [NSDictionary]) {
+        print("Writing .aiff files from data...")
         for i in 0 ..< json.count {
             if let filename = json[i]["filename"] as? String, let text = json[i]["text"] as? String, let voice = json[i]["voice"] as? String {
                 let speech = NSSpeechSynthesizer(voice: NSSpeechSynthesizer.VoiceName.init(rawValue: "com.apple.speech.synthesis.voice.\(voice)"))
@@ -24,6 +25,7 @@ struct TTS {
                 print("Unable to generate audio at index: \(i)")
             }
         }
+        print("Finished writing .aiff files...")
     }
     
 }
